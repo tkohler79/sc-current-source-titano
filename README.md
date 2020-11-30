@@ -8,7 +8,6 @@
 * write instructions on how to install code on to bare titano
 * Add python code to set current by talking to DAC chip... Difficulty level:  easy
 *  write to DAC.txt file on SD card everytime DAC values are changed... Difficulty level: medium
-*  On boot check if DAC.txt file exists on SD card, if not create it.  Difficulty level: medium
 *  Add on/off button for all channels of the current source... Difficulty level: hard
 
 ## screenshot
