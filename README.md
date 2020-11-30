@@ -10,3 +10,5 @@
 *  On boot check if DAC.txt file exists on SD card, if not create it.  Difficulty level: medium
 *  Add on/off button for all channels of the current source... Difficulty level: hard
 
+## screenshot
+![titano_screenshot](https://github.com/saewoonam/sc-current-source-titano/blob/main/screenshot_titano.png?raw=true)
