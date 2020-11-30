@@ -31,10 +31,17 @@ def save_settings(values):
         for i in range(8):
             output_file.write('%f\n'%values[i])
 
-values = []
-with open('/sd/DAC.txt', 'r') as input_file:
-    for i in range(8):
-        values.append(float(input_file.readline()))
+try:
+    with open('/sd/DAC.txt', 'r') as input_file:
+        values = []
+        for i in range(8):
+            values.append(float(input_file.readline()))
+except Exception as e:
+    print(e)
+    # assume because file doesn't exist
+    values = [0, 0, 0, 0, 0, 0, 0, 0]
+    save_settings(values)
+
 print('values',values)
 
 # These pins are used as both analog and digital! XL, XR and YU must be analog
@@ -142,6 +149,9 @@ while True:
                     index = int(command[:-1])
                     #  Check if index is in range
                     print('%d %f' % (index, values[index]))
+                if command.upper() == 'S':
+                    save_settings(values);
+                    print('saved values');
             else:  # len(msg)==2
                 index = int(command[:-1])
                 new_value = float(msg[1])
